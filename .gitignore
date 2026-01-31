@@ -1,0 +1,4 @@
+# Godot-specific ignores
+.godot/
+*.translation
+node_modules/

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://88b5fm67uaje"
+path="res://.godot/imported/cat_walk.ase-e5310f890fb790f249adf5943363ff2d.res"
+
+[deps]
+
+source_file="res://cat_walk.ase"
+dest_files=["res://.godot/imported/cat_walk.ase-e5310f890fb790f249adf5943363ff2d.res"]
+
+[params]
+

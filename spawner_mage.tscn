@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1nwm8ylp18gw"]
+
+[ext_resource type="Script" uid="uid://um3bj7tavyub" path="res://spawner.gd" id="1_7xp2h"]
+[ext_resource type="PackedScene" uid="uid://c8wwghg03d88g" path="res://enemy.tscn" id="2_j5liy"]
+
+[node name="spawner_mage" type="Node2D"]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(203, 32)
+script = ExtResource("1_7xp2h")
+escena_enemigo = ExtResource("2_j5liy")
