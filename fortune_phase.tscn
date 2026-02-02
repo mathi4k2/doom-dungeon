@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca6ku6bg21xig"]
+
+[ext_resource type="PackedScene" uid="uid://b8x2n716eeuo8" path="res://dice.tscn" id="1_vcvgi"]
+
+[node name="FortunePhase" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 266.0
+offset_bottom = 259.0
+color = Color(0.15448976, 0.24791339, 0.55259746, 1)
+
+[node name="Header" type="Label" parent="."]
+offset_left = 114.0
+offset_top = 1.0
+offset_right = 164.0
+offset_bottom = 24.0
+text = "Boss 1"
+
+[node name="Mainlayout" type="HBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 27.0
+offset_right = 260.0
+offset_bottom = 192.0
+
+[node name="LeftPanel" type="VBoxContainer" parent="Mainlayout"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mainlayout/LeftPanel"]
+layout_mode = 2
+text = "Dado"
+
+[node name="Dado1" type="TextureButton" parent="Mainlayout/LeftPanel"]
+layout_mode = 2
+
+[node name="Dado2" type="TextureButton" parent="Mainlayout/LeftPanel"]
+layout_mode = 2
+
+[node name="Dado3" type="TextureButton" parent="Mainlayout/LeftPanel"]
+layout_mode = 2
+
+[node name="CenterPanel" type="VBoxContainer" parent="Mainlayout"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mainlayout/CenterPanel"]
+layout_mode = 2
+text = "               Tirada"
+
+[node name="RigthPanel" type="VBoxContainer" parent="Mainlayout"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mainlayout/RigthPanel"]
+layout_mode = 2
+text = "        Mínimo"
+
+[node name="Dice" parent="Mainlayout" instance=ExtResource("1_vcvgi")]
+position = Vector2(37, 33)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(101, 221)
+
+[node name="Button" type="Button" parent="Node2D"]
+offset_right = 75.0
+offset_bottom = 24.0
+text = "Confirm"
