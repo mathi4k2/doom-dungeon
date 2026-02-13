@@ -5,16 +5,16 @@
 [node name="FortunePhase" type="CanvasLayer"]
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 287.0
-offset_bottom = 335.0
+offset_right = 382.0
+offset_bottom = 322.0
 color = Color(0.15448976, 0.24791339, 0.55259746, 1)
 
 [node name="Header" type="Label" parent="."]
-offset_left = 114.0
-offset_top = 1.0
-offset_right = 164.0
-offset_bottom = 24.0
-text = "Boss 1"
+offset_left = 127.0
+offset_top = 18.0
+offset_right = 235.0
+offset_bottom = 41.0
+text = "Test your luck"
 
 [node name="Mainlayout" type="HBoxContainer" parent="."]
 offset_left = 4.0
@@ -22,31 +22,11 @@ offset_top = 27.0
 offset_right = 260.0
 offset_bottom = 192.0
 
-[node name="LeftPanel" type="VBoxContainer" parent="Mainlayout"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Mainlayout/LeftPanel"]
-layout_mode = 2
-
-[node name="CenterPanel" type="VBoxContainer" parent="Mainlayout"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Mainlayout/CenterPanel"]
-layout_mode = 2
-text = "                         Tirada"
-
-[node name="RigthPanel" type="VBoxContainer" parent="Mainlayout"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Mainlayout/RigthPanel"]
-layout_mode = 2
-text = "             Mínimo"
-
 [node name="Dice" parent="Mainlayout" instance=ExtResource("1_vcvgi")]
-position = Vector2(37, 33)
+position = Vector2(0, 6)
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(106, 289)
+position = Vector2(143, 283)
 
 [node name="Button" type="Button" parent="Node2D"]
 offset_right = 75.0

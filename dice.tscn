@@ -22,8 +22,10 @@ metadata/_custom_type_script = "uid://cohd4ovwrydr0"
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 83.0
+offset_top = 16.0
+offset_right = 123.0
+offset_bottom = 56.0
 script = ExtResource("1_xak8u")
 
 [node name="DiceRollerControl" type="SubViewportContainer" parent="Control"]
@@ -85,15 +87,36 @@ script = ExtResource("5_8eu0n")
 
 [node name="Label" type="Label" parent="Control/VScrollBar"]
 layout_mode = 0
-offset_left = 11.999996
-offset_top = -6.999996
-offset_right = 51.999996
+offset_left = 18.999996
+offset_top = -6.9999957
+offset_right = 58.999996
 offset_bottom = 16.000004
 rotation = -3.1415927
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 15.0
+offset_right = -4.0
+offset_bottom = 121.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+text = "Fuerza"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+text = "Salud"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+text = "Stamina"
+
+[connection signal="roll_finnished" from="Control/DiceRollerControl" to="Control" method="_on_dice_roll_finished"]
 [connection signal="pressed" from="Control/HBoxContainer/Button" to="Control" method="_on_d6_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button" to="Control/VScrollBar" method="_on_d6_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button2" to="Control" method="_on_d12_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button2" to="Control/VScrollBar" method="_on_d12_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button3" to="Control" method="_on_d20_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button3" to="Control/VScrollBar" method="_on_d20_pressed"]
+[connection signal="value_changed" from="Control/VScrollBar" to="Control" method="_on_scroll_bar_value_changed"]
