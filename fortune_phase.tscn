@@ -1,0 +1,118 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca6ku6bg21xig"]
+
+[ext_resource type="Script" uid="uid://bubnfxdx7tqo" path="res://FortunePhaseUI.gd" id="1_gm5k7"]
+
+[node name="FortunePhase" type="Control"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+script = ExtResource("1_gm5k7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.1
+anchors_top = 0.15
+anchors_right = 0.9
+anchors_bottom = 0.85
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "FASE DE FORTUNA"
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CoinLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Monedas: 0"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AttributeLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Selecciona un atributo:"
+horizontal_alignment = 1
+
+[node name="AttributeButtons" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnDamage" type="Button" parent="PanelContainer/VBoxContainer/AttributeButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "⚔️ Daño"
+
+[node name="BtnHealth" type="Button" parent="PanelContainer/VBoxContainer/AttributeButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "❤️ Salud"
+
+[node name="BtnSpeed" type="Button" parent="PanelContainer/VBoxContainer/AttributeButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "⚡ Velocidad"
+
+[node name="Spacer3" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BetLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Apuesta (monedas):"
+horizontal_alignment = 1
+
+[node name="VScrollBar" type="VScrollBar" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+
+[node name="BetValueLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "0 / 100"
+horizontal_alignment = 1
+
+[node name="Spacer4" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DiceRollerControl" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+custom_minimum_size = Vector2(0, 150)
+
+[node name="Spacer5" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ControlButtons" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnConfirm" type="Button" parent="PanelContainer/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TIRAR DADO"
+
+[node name="BtnCancel" type="Button" parent="PanelContainer/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CANCELAR"
