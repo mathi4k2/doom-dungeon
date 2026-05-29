@@ -1,4 +1,21 @@
-# Godot-specific ignores
+# Cache y datos temporales de Godot 4
 .godot/
 *.translation
-node_modules/
+
+# Archivos de configuración local del editor (No subirlos)
+export_presets.cfg
+project.fragment.godot
+
+# Archivos temporales y de respaldo del sistema/OS
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Volcados de memoria o crashes
+*.mono/
+data_*/
+
+# Si usas builds específicos
+android/
+build/
