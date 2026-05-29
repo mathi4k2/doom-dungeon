@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd0x0kcgu8l3q"]
+
+[ext_resource type="Script" uid="uid://bqrlrs4n3pi2n" path="res://health_bar.gd" id="1_m7ell"]
+
+[node name="HealthBar" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 77.0
+offset_top = 53.0
+offset_right = 81.0
+offset_bottom = 80.0
+step = 0.1
+value = 100.0
+script = ExtResource("1_m7ell")
