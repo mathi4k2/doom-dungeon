@@ -2,6 +2,8 @@ extends Control
 ## UI para la pantalla de Fase de Fortuna (apuestas y dados)
 class_name FortunePhaseUI
 
+signal fortune_finished
+
 # -----------------------------------------------------------
 # REFERENCIAS
 # -----------------------------------------------------------
@@ -19,7 +21,7 @@ class_name FortunePhaseUI
 # -----------------------------------------------------------
 # REFERENCIAS AL SISTEMA DE JUEGO
 # -----------------------------------------------------------
-var fortune_manager: FortuneRollManager = null
+@export var fortune_manager: FortuneRollManager = null
 
 # -----------------------------------------------------------
 # ESTADO DE LA UI
@@ -35,13 +37,10 @@ var current_bet: int = 0
 # -----------------------------------------------------------
 
 func _ready() -> void:
-	# Buscar o crear FortuneRollManager
-	fortune_manager = get_tree().root.get_child(0).find_child("FortuneRollManager", true, false)
-	if not fortune_manager:
-		push_warning("FortunePhaseUI: No se encontró FortuneRollManager. Creando automáticamente...")
-		fortune_manager = FortuneRollManager.new()
-		fortune_manager.name = "FortuneRollManager"
-		get_tree().root.get_child(0).add_child(fortune_manager)
+	if fortune_manager == null:
+		fortune_manager = get_tree().current_scene.get_node_or_null("FortuneRollManager") as FortuneRollManager
+	if fortune_manager == null:
+		push_warning("FortunePhaseUI: No se encontró FortuneRollManager. Se usará el gestor inyectado desde Main si existe.")
 	
 	# Actualizar interfaz de monedas
 	_update_coin_display()
@@ -142,13 +141,18 @@ func _on_confirm_pressed() -> void:
 func _on_dice_roll_finished(result: Variant) -> void:
 	var roll_value: int = int(result)
 	print("🎲 Resultado: ", roll_value)
+
+	if fortune_manager == null:
+		push_error("FortunePhaseUI: No hay FortuneRollManager inyectado.")
+		return
 	
 	# Ejecutar apuesta a través del FortuneRollManager
 	var exito = fortune_manager.execute_roll(selected_attribute, current_bet, roll_value)
 	
 	if exito:
-		# Resetear UI para nueva apuesta
 		_reset_ui()
+		fortune_finished.emit()
+		hide()
 	else:
 		print("❌ Apuesta fallida")
 
@@ -168,6 +172,8 @@ func _reset_ui() -> void:
 # -----------------------------------------------------------
 
 func _on_cancel_pressed() -> void:
-	fortune_manager.cancel_roll()
+	if fortune_manager:
+		fortune_manager.cancel_roll()
 	_reset_ui()
+	fortune_finished.emit()
 	hide()

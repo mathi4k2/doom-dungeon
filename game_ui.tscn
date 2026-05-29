@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pkq12ll3q0ha"]
+
+[ext_resource type="PackedScene" uid="uid://drk8nqy8xnv0" path="res://coin_display.tscn" id="2_coin"]
+[ext_resource type="PackedScene" uid="uid://ca6ku6bg21xig" path="res://fortune_phase.tscn" id="3_fortune"]
+
+[node name="GameUI" type="CanvasLayer"]
+
+[node name="HUD_manager" type="Node2D" parent="."]
+
+[node name="CoinDisplay" parent="HUD_manager" instance=ExtResource("2_coin")]
+offset_left = 20.0
+offset_top = 91.0
+offset_right = 135.0
+offset_bottom = 114.0
+
+[node name="Menus_container" type="Node2D" parent="."]
+
+[node name="FortunePhase" parent="Menus_container" instance=ExtResource("3_fortune")]
+visible = false
