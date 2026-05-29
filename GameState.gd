@@ -10,6 +10,7 @@ signal coins_changed(new_amount: int)
 # VARIABLES DE ESTADO
 # -----------------------------------------------------------
 var coins: int = 0
+var nivel_actual: int = 1
 var total_damage_applied: float = 0.0
 var total_health_applied: float = 0.0
 var total_speed_applied: float = 0.0
