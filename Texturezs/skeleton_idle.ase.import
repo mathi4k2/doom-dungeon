@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c8lrno0kia4s4"
+path="res://.godot/imported/skeleton_idle.ase-8dafc9fa429b088fedffc6b38ac34631.res"
+
+[deps]
+
+source_file="res://Texturezs/skeleton_idle.ase"
+dest_files=["res://.godot/imported/skeleton_idle.ase-8dafc9fa429b088fedffc6b38ac34631.res"]
+
+[params]
+
